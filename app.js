@@ -32,10 +32,8 @@ function Store(locationName, minCustPerHour, maxCustPerHour, avgCookiePerSale) {
 Store.prototype.calcCustPerHour = function() {
   for (var i = 0; i < hours.length; i++) {
     this.customersEachHour.push(
-      // Math.floor(
       Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1) +
         this.minCustPerHour
-      // )
     );
   }
 };
@@ -53,6 +51,8 @@ Store.prototype.calcTotalCookies = function() {
     this.totalDailyCookies += this.cookiesEachHour[i];
   }
 };
+
+var renderTable = document.getElementById('store-data');
 
 Store.prototype.render = function() {
   this.calcCustPerHour();
@@ -73,7 +73,6 @@ Store.prototype.render = function() {
     tableRow.appendChild(cookieCountPerHour);
   }
   // append td to table
-  var renderTable = document.getElementById('store-data');
   renderTable.appendChild(tableRow);
 };
 
@@ -88,3 +87,22 @@ seatacStore.render();
 seattleCenter.render();
 capitolStore.render();
 alkiStore.render();
+
+// create total row
+var totalColumn = document.createElement('tr');
+var timeTotal = document.createElement('td');
+timeTotal.textContent = 'Totals';
+totalColumn.appendChild(timeTotal);
+// var totalArray = [];
+for (var i = 0; i < hours.length; i++) {
+  var totalForHour = document.createElement('td');
+  totalForHour.textContent =
+    pikeStore.cookiesEachHour[i] +
+    seatacStore.cookiesEachHour[i] +
+    seattleCenter.cookiesEachHour[i] +
+    capitolStore.cookiesEachHour[i] +
+    alkiStore.cookiesEachHour[i];
+  console.log(totalForHour.textContent);
+  totalColumn.appendChild(totalForHour);
+}
+renderTable.appendChild(totalColumn);
