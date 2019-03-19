@@ -1,0 +1,27 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffa3a3;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+ul {
+  list-style-image: url(../images/cookie-solid.svg);
+  color: brown;
+  font-size: 1.7rem;
+  margin: 0 auto;
+  max-width: 300px;
+  text-align: left;
+}
+
+li {
+  color: #000;
+}
