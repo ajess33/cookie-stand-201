@@ -1,3 +1,7 @@
+// each object needs to have its own row
+
+// when using body you have to do document.body
+
 var hours = [
   '6am',
   '7am',
