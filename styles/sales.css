@@ -37,11 +37,11 @@ th:first-of-type {
 }
 
 tr:nth-child(odd) {
-  background-color: rgba(162, 255, 232, 0.5);
+  background-color: rgba(162, 255, 232, 0.3);
 }
 
 tr:nth-child(even) {
-  background-color: rgba(255, 163, 163, 0.5);
+  background-color: rgba(255, 163, 163, 0.3);
 }
 
 td {
