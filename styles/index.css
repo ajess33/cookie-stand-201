@@ -1,0 +1,23 @@
+/* #ffa3a3; */
+
+body {
+  background-color: #a2ffe8;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 5rem;
+  display: inline-block;
+  color: #ffa3a3;
+  border-bottom: 2px solid #ffa3a3;
+}
+
+header img {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
