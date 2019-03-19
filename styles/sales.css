@@ -26,10 +26,10 @@ table {
 
 th {
   width: 50px;
-  /* border: 2px solid #a2ffe8; */
   border-radius: 3px;
   padding: 5px;
   background-color: #a2ffe8;
+  font-size: 1.5rem;
 }
 
 th:first-of-type {
