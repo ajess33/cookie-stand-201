@@ -79,12 +79,13 @@ var seattleCenter = new Store('Seattle Center', '11', '38', '3.7');
 var capitolStore = new Store('Capitol Hill', '20', '38', '3.7');
 var alkiStore = new Store('Alki', '2', '16', '4.6');
 
-var storesArr = [pikeStore, seatacStore, seattleCenter, alkiStore];
-pikeStore.render();
-seatacStore.render();
-seattleCenter.render();
-capitolStore.render();
-alkiStore.render();
+var storesArr = [
+  pikeStore,
+  seatacStore,
+  seattleCenter,
+  capitolStore,
+  alkiStore
+];
 
 // ===================
 // FORM
@@ -99,33 +100,43 @@ function handleForm(e) {
   var maximum = parseInt(e.target.max.value, 10);
   var cookiesPerCustomer = parseInt(e.target.cookies.value);
   var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
-  storesArr.push[newStore];
-  newStore.render();
-  // computeTotals();
+  storesArr.push(newStore);
+  console.log(storesArr);
+  displayTable();
 }
 
 formEl.addEventListener('submit', handleForm);
 
-// create footer row
-var totalRow = document.createElement('tr');
-// create footer table data
-var timeTotal = document.createElement('td');
-timeTotal.textContent = 'Totals';
-totalRow.appendChild(timeTotal);
-
 function computeTotals() {
+  // create footer row
+  var totalRow = document.createElement('tr');
+  // create footer table data
+  var timeTotal = document.createElement('th');
+  timeTotal.textContent = 'Totals';
+  totalRow.appendChild(timeTotal);
+
+  var total = 0;
+
   for (var i = 0; i < hours.length; i++) {
-    var total = 0;
+    total = 0;
     var totalForHour = document.createElement('td');
     storesArr.forEach(function(store) {
-      console.log(store.cookiesEachHour[i]);
       total += store.cookiesEachHour[i];
     });
     totalForHour.textContent = total;
     totalRow.appendChild(totalForHour);
+    totalRow.className = 'footer-totals';
   }
+  renderFooter.innerHTML = '';
   renderFooter.appendChild(totalRow);
 }
-computeTotals();
 
-totalRow.className = 'footer-totals';
+function displayTable() {
+  renderTable.innerHTML = '';
+  for (var i = 0; i < storesArr.length; i++) {
+    storesArr[i].render();
+  }
+  computeTotals();
+}
+
+displayTable();
