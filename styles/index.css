@@ -134,6 +134,7 @@ main h3 {
   background-color: #ffa3a3;
   margin: 200px auto 0 auto;
   width: 60vw;
+  height: 300px;
   text-align: center;
   padding: 25px;
   border-radius: 10px;
@@ -143,6 +144,11 @@ main h3 {
 main .reviews-wrapper h3 {
   width: 300px;
   margin: 0 auto 50px auto;
+}
+
+.reviews-wrapper p {
+  color: #fff;
+  font-size: 1.3rem;
 }
 
 /* =================== */

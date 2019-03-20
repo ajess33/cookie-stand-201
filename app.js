@@ -1,7 +1,3 @@
-// each object needs to have its own row
-
-// when using body you have to do document.body
-
 var hours = [
   '6am',
   '7am',
@@ -53,6 +49,7 @@ Store.prototype.calcTotalCookies = function() {
 };
 
 var renderTable = document.getElementById('store-data');
+var renderFooter = document.getElementById('data-totals');
 
 Store.prototype.render = function() {
   this.calcCustPerHour();
@@ -82,27 +79,53 @@ var seattleCenter = new Store('Seattle Center', '11', '38', '3.7');
 var capitolStore = new Store('Capitol Hill', '20', '38', '3.7');
 var alkiStore = new Store('Alki', '2', '16', '4.6');
 
+var storesArr = [pikeStore, seatacStore, seattleCenter, alkiStore];
 pikeStore.render();
 seatacStore.render();
 seattleCenter.render();
 capitolStore.render();
 alkiStore.render();
 
-// create total row
-var totalColumn = document.createElement('tr');
+// ===================
+// FORM
+// ===================
+
+var formEl = document.getElementById('store-form');
+
+function handleForm(e) {
+  e.preventDefault();
+  var location = e.target.location.value;
+  var minimum = parseInt(e.target.min.value, 10);
+  var maximum = parseInt(e.target.max.value, 10);
+  var cookiesPerCustomer = parseInt(e.target.cookies.value);
+  var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
+  storesArr.push[newStore];
+  newStore.render();
+  // computeTotals();
+}
+
+formEl.addEventListener('submit', handleForm);
+
+// create footer row
+var totalRow = document.createElement('tr');
+// create footer table data
 var timeTotal = document.createElement('td');
 timeTotal.textContent = 'Totals';
-totalColumn.appendChild(timeTotal);
-// var totalArray = [];
-for (var i = 0; i < hours.length; i++) {
-  var totalForHour = document.createElement('td');
-  totalForHour.textContent =
-    pikeStore.cookiesEachHour[i] +
-    seatacStore.cookiesEachHour[i] +
-    seattleCenter.cookiesEachHour[i] +
-    capitolStore.cookiesEachHour[i] +
-    alkiStore.cookiesEachHour[i];
-  console.log(totalForHour.textContent);
-  totalColumn.appendChild(totalForHour);
+totalRow.appendChild(timeTotal);
+
+function computeTotals() {
+  for (var i = 0; i < hours.length; i++) {
+    var total = 0;
+    var totalForHour = document.createElement('td');
+    storesArr.forEach(function(store) {
+      console.log(store.cookiesEachHour[i]);
+      total += store.cookiesEachHour[i];
+    });
+    totalForHour.textContent = total;
+    totalRow.appendChild(totalForHour);
+  }
+  renderFooter.appendChild(totalRow);
 }
-renderTable.appendChild(totalColumn);
+computeTotals();
+
+totalRow.className = 'footer-totals';

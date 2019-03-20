@@ -12,6 +12,39 @@
   <body>
     <h1>Salmon Cookie Sales</h1>
     <a href="index.html">Back To Home</a>
+    <form id="store-form" action="" method="POST">
+      <fieldset>
+        <legend>ADD A STORE</legend>
+        <label for="location-input"
+          >Location
+          <input
+            id="location-input"
+            placeholder="Store Name"
+            type="text"
+            name="location"
+          />
+        </label>
+        <label for="min-customers-input">
+          Minimum Customers/Hour
+          <input id="min-customers-input" type="text" name="min" required />
+        </label>
+        <label for="max-customers-input">
+          Maximum Customers/Hour
+          <input id="max-customers-input" type="text" name="max" required />
+        </label>
+        <label for="cookies-per-customer-input">
+          Average Cookies/Sale
+          <input
+            id="cookies-per-customer-input"
+            type="text"
+            name="cookies"
+            required
+          />
+        </label>
+        <input type="submit" value="SUBMIT" />
+        <input type="reset" value="RESET" />
+      </fieldset>
+    </form>
     <section>
       <table>
         <tr>

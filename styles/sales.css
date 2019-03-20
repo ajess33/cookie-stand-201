@@ -6,14 +6,43 @@ body {
 
 h1 {
   font-family: 'Lobster', cursive;
-  font-size: 3.5rem;
+  font-size: 5rem;
   color: #a2ffe8;
 }
 
-h2 {
-  font-size: 2.3rem;
-  color: #a2ffe8;
+/* =================== */
+/* FORM */
+/* =================== */
+
+form {
+  margin: 50px auto 50px auto;
+  max-width: 600px;
+  background-color: #fff;
 }
+
+fieldset legend {
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+}
+
+input {
+  border-radius: 5px;
+  border: 2px solid #a2ffe8;
+}
+
+input:focus {
+  border: 5px solid #a2ffe8;
+}
+
+input[name='location'] {
+}
+
+/* =================== */
+/* TABLE */
+/* =================== */
 
 table {
   margin: 50px auto 0 auto;
@@ -32,16 +61,20 @@ th {
   font-size: 1.5rem;
 }
 
-th:first-of-type {
+tbody th:first-of-type {
   width: 150px;
 }
 
-tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
   background-color: rgba(162, 255, 232, 0.3);
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
   background-color: rgba(255, 163, 163, 0.3);
+}
+
+tfoot {
+  background-color: #ffa3a3;
 }
 
 td {
