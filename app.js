@@ -1,7 +1,3 @@
-// each object needs to have its own row
-
-// when using body you have to do document.body
-
 var hours = [
   '6am',
   '7am',
@@ -53,6 +49,7 @@ Store.prototype.calcTotalCookies = function() {
 };
 
 var renderTable = document.getElementById('store-data');
+var renderFooter = document.getElementById('data-totals');
 
 Store.prototype.render = function() {
   this.calcCustPerHour();
@@ -82,27 +79,72 @@ var seattleCenter = new Store('Seattle Center', '11', '38', '3.7');
 var capitolStore = new Store('Capitol Hill', '20', '38', '3.7');
 var alkiStore = new Store('Alki', '2', '16', '4.6');
 
-pikeStore.render();
-seatacStore.render();
-seattleCenter.render();
-capitolStore.render();
-alkiStore.render();
+var storesArr = [
+  pikeStore,
+  seatacStore,
+  seattleCenter,
+  capitolStore,
+  alkiStore
+];
 
-// create total row
-var totalColumn = document.createElement('tr');
-var timeTotal = document.createElement('td');
-timeTotal.textContent = 'Totals';
-totalColumn.appendChild(timeTotal);
-// var totalArray = [];
-for (var i = 0; i < hours.length; i++) {
-  var totalForHour = document.createElement('td');
-  totalForHour.textContent =
-    pikeStore.cookiesEachHour[i] +
-    seatacStore.cookiesEachHour[i] +
-    seattleCenter.cookiesEachHour[i] +
-    capitolStore.cookiesEachHour[i] +
-    alkiStore.cookiesEachHour[i];
-  console.log(totalForHour.textContent);
-  totalColumn.appendChild(totalForHour);
+// ===================
+// FORM
+// ===================
+
+var formEl = document.getElementById('store-form');
+
+function handleForm(e) {
+  e.preventDefault();
+  var location = e.target.location.value;
+  var minimum = parseInt(e.target.min.value, 10);
+  var maximum = parseInt(e.target.max.value, 10);
+  var cookiesPerCustomer = parseInt(e.target.cookies.value);
+  var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
+  storesArr.push(newStore);
+
+  function clearForm() {
+    e.target.location.value = '';
+    e.target.min.value = null;
+    e.target.max.value = null;
+    e.target.cookies.value = null;
+  }
+  clearForm();
+
+  displayTable();
 }
-renderTable.appendChild(totalColumn);
+
+formEl.addEventListener('submit', handleForm);
+
+function computeTotals() {
+  // create footer row
+  var totalRow = document.createElement('tr');
+  // create footer table data
+  var timeTotal = document.createElement('th');
+  timeTotal.textContent = 'Totals';
+  totalRow.appendChild(timeTotal);
+
+  var total = 0;
+
+  for (var i = 0; i < hours.length; i++) {
+    total = 0;
+    var totalForHour = document.createElement('td');
+    storesArr.forEach(function(store) {
+      total += store.cookiesEachHour[i];
+    });
+    totalForHour.textContent = total;
+    totalRow.appendChild(totalForHour);
+    totalRow.className = 'footer-totals';
+  }
+  renderFooter.innerHTML = '';
+  renderFooter.appendChild(totalRow);
+}
+
+function displayTable() {
+  renderTable.innerHTML = '';
+  for (var i = 0; i < storesArr.length; i++) {
+    storesArr[i].render();
+  }
+  computeTotals();
+}
+
+displayTable();
