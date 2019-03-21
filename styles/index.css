@@ -107,6 +107,7 @@ main section .store-hours {
 .store-hours .daily-hours {
   font-size: 2.5rem;
   color: #a2ffe8;
+  margin-bottom: 30px;
 }
 
 .pattern-wrapper img {
@@ -138,7 +139,7 @@ main h4 {
 
 main h3 {
   font-family: 'Lobster', cursive;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   margin-top: 0;
   margin-bottom: 0;
   color: #ffa3a3;
@@ -180,18 +181,93 @@ main .reviews-wrapper h3 {
 /* LOCATIONS */
 /* =================== */
 
-.locations-list {
+.locations-wrapper {
   text-align: center;
-  margin: 200px auto 100px auto;
+  margin: 200px auto 200px auto;
+  max-width: 1400px;
 }
 
-.locations-list h3 {
+.locations-wrapper h3 {
   background-color: #a2ffe8;
+  margin-bottom: 50px;
 }
 
-.locations-list img {
-  width: 50px;
+.locations-wrapper img {
+  width: 40px;
   margin: 0 10px 0 0;
+}
+
+.locations-wrapper .locations-list {
+  list-style-type: none;
+}
+
+.locations-list li {
+  display: inline-block;
+  max-width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px 5px;
+  box-shadow: 0 0 10px #333;
+}
+
+.locations-list li h5 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  color: #ffa3a3;
+}
+
+.locations-list li p {
+  font-size: 0.9rem;
+}
+
+/* =================== */
+/* MERCH */
+/* =================== */
+.merch {
+  text-align: center;
+  font-weight: 800;
+}
+
+.merch h3 {
+  background: #a2ffe8;
+  margin-top: 100px;
+}
+
+.merch h3 img {
+  width: 40px;
+  margin: 0 10px 0 0;
+}
+
+.merch .tshirt-img {
+  margin: 30px auto;
+  display: block;
+  cursor: pointer;
+}
+
+.merch p {
+  background: #ffa3a3;
+  width: 300px;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.end-message {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.end-message img {
+  display: block;
+  margin-top: 200px;
+  border-radius: 5px;
+}
+
+.end-message h3 {
+  background: #a2ffe8;
+  text-align: center;
+  margin-top: 30px;
 }
 
 /* =================== */
