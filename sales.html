@@ -24,23 +24,38 @@
             name="location"
           />
         </label>
-        <label for="min-customers-input">
-          Minimum Customers/Hour
-          <input id="min-customers-input" type="text" name="min" required />
-        </label>
-        <label for="max-customers-input">
-          Maximum Customers/Hour
-          <input id="max-customers-input" type="text" name="max" required />
-        </label>
-        <label for="cookies-per-customer-input">
-          Average Cookies/Sale
-          <input
-            id="cookies-per-customer-input"
-            type="text"
-            name="cookies"
-            required
-          />
-        </label>
+        <section>
+          <label for="min-customers-input">
+            Minimum Customers/Hour
+            <input
+              id="min-customers-input"
+              type="text"
+              name="min"
+              placeholder="12"
+              required
+            />
+          </label>
+          <label for="max-customers-input">
+            Maximum Customers/Hour
+            <input
+              id="max-customers-input"
+              type="text"
+              name="max"
+              placeholder="23"
+              required
+            />
+          </label>
+          <label for="cookies-per-customer-input">
+            Average Cookies/Sale
+            <input
+              id="cookies-per-customer-input"
+              type="text"
+              name="cookies"
+              placeholder="6.1"
+              required
+            />
+          </label>
+        </section>
         <input type="submit" value="SUBMIT" />
         <input type="reset" value="RESET" />
       </fieldset>
@@ -68,6 +83,9 @@
         <tfoot id="data-totals"></tfoot>
       </table>
     </section>
+    <footer>
+      <p>© Made by Austin Jess - 2019</p>
+    </footer>
     <script src="app.js" type="text/javascript"></script>
   </body>
 </html>

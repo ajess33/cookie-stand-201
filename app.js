@@ -101,7 +101,15 @@ function handleForm(e) {
   var cookiesPerCustomer = parseInt(e.target.cookies.value);
   var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
   storesArr.push(newStore);
-  console.log(storesArr);
+
+  function clearForm() {
+    e.target.location.value = '';
+    e.target.min.value = null;
+    e.target.max.value = null;
+    e.target.cookies.value = null;
+  }
+  clearForm();
+
   displayTable();
 }
 
