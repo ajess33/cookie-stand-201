@@ -48,6 +48,10 @@ Store.prototype.calcTotalCookies = function() {
   }
 };
 
+// Store.prototype.updateStore = function() {
+
+// }
+
 var renderTable = document.getElementById('store-data');
 var renderFooter = document.getElementById('data-totals');
 
@@ -98,7 +102,7 @@ function handleForm(e) {
   var location = e.target.location.value;
   var minimum = parseInt(e.target.min.value, 10);
   var maximum = parseInt(e.target.max.value, 10);
-  var cookiesPerCustomer = parseInt(e.target.cookies.value);
+  var cookiesPerCustomer = parseFloat(e.target.cookies.value);
   var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
   storesArr.push(newStore);
 

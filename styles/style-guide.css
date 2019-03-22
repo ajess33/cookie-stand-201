@@ -1,0 +1,76 @@
+body {
+  padding: 100px;
+}
+
+h2 {
+  margin: 50px 0;
+}
+
+.color {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+
+.primary {
+  background: #ffa3a3;
+}
+
+.secondary {
+  background: #a2ffe8;
+}
+
+.inline {
+  display: inline-block;
+  margin: 30px 20px;
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+}
+.montserrat {
+  font-family: Montserrat, sans-serif;
+}
+.data {
+  font-family: Ariel, Helvetica, sans-serif;
+}
+
+.nav-button {
+  color: #ffa3a3;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit {
+  border: none;
+  height: 50px;
+  margin: 20px 20px 0 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px #333;
+  letter-spacing: 1.1px;
+  padding: 10px 20px;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  background: #ffa3a3;
+  font-size: 1.1rem;
+}
+
+.reset {
+  background: #fff;
+  color: #ffa3a3;
+  border: none;
+  height: 50px;
+  margin: 20px 20px 0 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px #333;
+  letter-spacing: 1.1px;
+  padding: 10px 20px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
