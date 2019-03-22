@@ -48,9 +48,15 @@ Store.prototype.calcTotalCookies = function() {
   }
 };
 
-// Store.prototype.updateStore = function() {
-
-// }
+Store.prototype.updateStore = function(minimum, maximum, cookiesPerCustomer) {
+  this.cookiesEachHour = [];
+  this.customersEachHour = [];
+  this.minCustPerHour = minimum;
+  this.maxCustPerHour = maximum;
+  this.avgCookiePerSale - cookiesPerCustomer;
+  this.calcCustPerHour();
+  this.calcCookiesPerHour();
+};
 
 var renderTable = document.getElementById('store-data');
 var renderFooter = document.getElementById('data-totals');
@@ -103,8 +109,17 @@ function handleForm(e) {
   var minimum = parseInt(e.target.min.value, 10);
   var maximum = parseInt(e.target.max.value, 10);
   var cookiesPerCustomer = parseFloat(e.target.cookies.value);
-  var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
-  storesArr.push(newStore);
+
+  //! Updates store but wont add a new one
+  for (var i = 0; i < storesArr.length; i++) {
+    if (location === storesArr[i].locationName) {
+      storesArr[i].updateStore(minimum, maximum, cookiesPerCustomer);
+      break;
+    } else if (i === storesArr.length - 1) {
+      var newStore = new Store(location, minimum, maximum, cookiesPerCustomer);
+      storesArr.push(newStore);
+    }
+  }
 
   function clearForm() {
     e.target.location.value = '';
