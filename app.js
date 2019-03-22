@@ -48,6 +48,10 @@ Store.prototype.calcTotalCookies = function() {
   }
 };
 
+// Store.prototype.updateStore = function() {
+
+// }
+
 var renderTable = document.getElementById('store-data');
 var renderFooter = document.getElementById('data-totals');
 

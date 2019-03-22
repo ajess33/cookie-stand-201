@@ -186,6 +186,7 @@ tbody tr:nth-child(even) {
 
 tfoot {
   background-color: #ffa3a3;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 td {
