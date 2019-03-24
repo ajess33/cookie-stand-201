@@ -26,47 +26,41 @@
       <fieldset>
         <legend>ADD A STORE</legend>
         <section class="form-fields">
+          <input id="location-input" type="text" name="location" autocomplete="off" />
           <label for="location-input"
-            >Location<span class="required">*</span>
-            <input
-              id="location-input"
-              placeholder="Store Name"
-              type="text"
-              name="location"
-            />
+            >Store Name<span class="required">*</span>
           </label>
           <section>
+            <input
+            id="min-customers-input"
+            type="text"
+            name="min"
+            autocomplete="off"
+            required
+            />
             <label for="min-customers-input">
               Min Customers/Hour<span class="required">*</span>
-              <input
-                id="min-customers-input"
-                type="text"
-                name="min"
-                placeholder="12"
-                required
-              />
             </label>
+            <input
+            id="max-customers-input"
+            type="text"
+            name="max"
+            autocomplete="off"
+            required
+            />
             <label for="max-customers-input">
               Max Customers/Hour<span class="required">*</span>
-              <input
-                id="max-customers-input"
-                type="text"
-                name="max"
-                placeholder="23"
-                required
-              />
             </label>
+            <input
+            id="cookies-per-customer-input"
+            type="text"
+            name="cookies"
+            autocomplete="off"
+            required
+            />
             <label for="cookies-per-customer-input">
               Average Cookies/Sale<span class="required">*</span>
-              <input
-                id="cookies-per-customer-input"
-                type="text"
-                name="cookies"
-                placeholder="6.1"
-                required
-              />
             </label>
-          </section>
         </section>
         <input type="submit" value="SUBMIT" />
         <input type="reset" value="RESET" />
