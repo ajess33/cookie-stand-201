@@ -204,21 +204,27 @@ main .reviews-wrapper h3 {
 .locations-list li {
   display: inline-block;
   max-width: 200px;
-  background-color: #fff;
+  background-color: #ccc;
   border-radius: 10px;
   padding: 30px;
   margin: 10px 5px;
   box-shadow: 0 0 10px #333;
 }
 
+.locations-list li:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 .locations-list li h5 {
   font-size: 1.4rem;
   margin: 10px 0;
-  color: #ffa3a3;
+  color: #a2ffe8;
 }
 
 .locations-list li p {
   font-size: 0.9rem;
+  font-weight: 800;
 }
 
 /* =================== */
@@ -251,6 +257,7 @@ main .reviews-wrapper h3 {
   margin: 0 auto;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .end-message {

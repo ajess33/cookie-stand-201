@@ -110,7 +110,6 @@ function handleForm(e) {
   var maximum = parseInt(e.target.max.value, 10);
   var cookiesPerCustomer = parseFloat(e.target.cookies.value);
 
-  //! Updates store but wont add a new one
   for (var i = 0; i < storesArr.length; i++) {
     if (location === storesArr[i].locationName) {
       storesArr[i].updateStore(minimum, maximum, cookiesPerCustomer);
