@@ -257,6 +257,7 @@ main .reviews-wrapper h3 {
   margin: 0 auto;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .end-message {
