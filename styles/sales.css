@@ -92,6 +92,8 @@ input {
   /* !!!!!!!!!!!! */
   transition: all 250ms ease;
   margin-bottom: 20px;
+  width: 100%;
+  color: #555;
 }
 
 input:focus {
@@ -99,15 +101,18 @@ input:focus {
   outline: none;
 }
 
-section input {
-  width: 100%;
+input:valid + label {
+  color: transparent;
 }
+
+/* .required section input {
+  width: 100%;
+} */
 
 input[type='submit'],
 input[type='reset'] {
   border: none;
   height: 50px;
-  margin: 20px 20px 0 20px;
   border-radius: 5px;
   box-shadow: 0 2px 2px #333;
   letter-spacing: 1.1px;
